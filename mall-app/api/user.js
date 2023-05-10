@@ -55,12 +55,21 @@ export function register(username, password, phoneNumber) {
 
 
 
-export function logout() {
+// export function logout() {
+// 	return request({
+// 		url: '/youlai-auth/oauth/logout',
+// 		method: 'delete',
+// 		headers: {
+// 			'auth': true // 需要认证，通过
+// 		}
+// 	})
+// }
+export function logout(username) {
 	return request({
-		url: '/youlai-auth/oauth/logout',
-		method: 'delete',
-		headers: {
-			'auth': true // 需要认证，通过
+		url: '/user/userLogout',
+		method: 'post',
+		data: {
+			username: username
 		}
 	})
 }

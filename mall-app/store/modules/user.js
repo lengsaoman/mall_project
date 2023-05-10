@@ -128,9 +128,8 @@ const actions = {
 		commit,
 		state,
 	}) {
-		
 		return new Promise((resolve, reject) => {
-			logout().then(() => {
+			logout(state.nickname).then(() => {
 				console.log('logout')
 				uni.removeStorageSync("userInfo")
 				uni.removeStorageSync("token")
